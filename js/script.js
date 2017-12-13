@@ -60,11 +60,6 @@ function vasenkamer()
 	p.innerHTML = "Je staat in een kamer vol vasen en en een stuk van een ladder.";
 	image.src = "img/piramide.13.jpg";
 	image2.src = "img/piramide.ladder.jpg";
-	if (knop.length <= 1) {
-		button1.style.display = "inline";
-	} else {
-		button1.style.display = "none";
-	}
 	if (plaatje1.length <= 1) {
 		image2.style.display = "inline";
 	} else {
@@ -73,7 +68,7 @@ function vasenkamer()
 	button1.innerHTML = "Pak het stuk van de ladder.";
 	button2.innerHTML = "kijk in 1 van de vasen.";
 	button3.innerHTML = "Ga terug.";
-		button1.setAttribute("onclick", "image2.style.display = 'none'; ladder.push('2'); plaatje1.push('2'); knop.push('2')");
+		button1.setAttribute("onclick", "image2.style.display = 'none'; ladder.push('2'); plaatje1.push('2'); button1.style.display = 'none'");
 		button2.setAttribute("onclick", "devaas();");
 	  button3.setAttribute("onclick", "start();");
 	image3.style.display = "none";
@@ -97,7 +92,7 @@ function devaas()
 	}
 	button1.innerHTML = "Pak de sleutel op.";
 	button2.innerHTML = "Stop met kijken in de vaas";
-		button1.setAttribute("onclick", "image3.style.display = 'none'; plaatje2.push('2'); sleutel1.push('2')");
+		button1.setAttribute("onclick", "image3.style.display = 'none'; plaatje2.push('2'); sleutel1.push('2'); button1.style.display = 'none'");
 		button2.setAttribute("onclick", "vasenkamer();");
 	image2.style.display = "none";
 	button1.style.display = "inline";
@@ -119,10 +114,10 @@ function linkerDeur()
 	button2.innerHTML = "Open de deur met de sleutel.";  /////// kan alleen open met sleutel /////// var unlock = 2 ////////////
 	  button1.setAttribute("onclick", "start();");
 		if (sleutel1.length <= 1) {
-			button2.setAttribute("onclick", "alert('Je hebt geen sleutel')");
+			button2.setAttribute("onclick", "alert('Je hebt geen sleutel'); button2.style.display = 'none'");
 		} else {
 			button2.setAttribute("onclick", "gang1();");
-			unlock.push("2")
+			unlock.push("2");
 		}
 	button3.style.display = "none";
 	button4.style.display = "none";
@@ -155,7 +150,7 @@ function gang1()
 	button5.innerHTML = "Ga terug";
 		button1.setAttribute("onclick", "checkLadder();");
 		button2.setAttribute("onclick", "checkPlaats();");
-		button3.setAttribute("onclick", "image4.style.display = 'none'; plaatje3.push('2'); ladder.push('1')");
+		button3.setAttribute("onclick", "image4.style.display = 'none'; button3.style.display = 'none'; plaatje3.push('2'); ladder.push('1')");
 		button4.setAttribute("onclick", "geslotendeur();");
 	  button5.setAttribute("onclick", "start();");
 	image5.style.display = "none";
@@ -167,7 +162,8 @@ function gang1()
 
 function checkLadder() {
 if (ladder.length <= 2) {
-	alert('Je hebt niet genoeg ladder onderdelen.');
+	alert("Je hebt niet genoeg ladder onderdelen.;");
+	button1.style.display = 'none'
 	} else {
 		image5.style.display = 'inline';
 		plaats.push('2');
@@ -189,7 +185,7 @@ function geslotendeur() {
 	button1.innerHTML = "Open de deur met de bol.";
 	button2.innerHTML = "Ga terug";
 	if (einde.length <= 1) {
-		button1.setAttribute("onclick", "alert('Je hebt geen bol')");
+		button1.setAttribute("onclick", "alert('Je hebt geen bol'); button1.style.display = 'none'");
 	} else {
 		button1.setAttribute("onclick", "hetEinde();");
 	}
@@ -300,7 +296,7 @@ function goudkamer() {
 	button1.innerHTML = "Pak op het breekijzer.";
 	button2.innerHTML = "Loop naar het kristal en pak het op.";
 	button3.innerHTML = "Ga terug";
-		button1.setAttribute("onclick", "image6.style.display = 'none'; ijzer.push('2')");
+		button1.setAttribute("onclick", "image6.style.display = 'none'; button1.style.display = 'none'; ijzer.push('2')");
 		button2.setAttribute("onclick", "val();");
 		button3.setAttribute("onclick", "gang2();");
 	button3.style.display = "block";
@@ -444,11 +440,11 @@ function plaatsLadder() {
 }
 
 function pakLadder() {
-	if (boven.length <= 1) {
+	if (boven.length == 2) {
+		alert("Er staat geen ladder om op te pakken.");
+	} else {
 		boven.push('2');
 		image5.style.display = 'none';
-	} else {
-		alert("Er staat geen ladder om op te pakken.");
 	}
 }
 
