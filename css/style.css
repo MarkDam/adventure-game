@@ -1,0 +1,94 @@
+body {
+	background-color: black;
+	height: 100%;
+}
+
+p, h1, h2, a {
+	color: white;
+	padding: 1%;
+	text-decoration: none;
+}
+
+
+a:hover {
+	color: black;
+}
+
+li {
+	list-style: none;
+	line-height: 25px;
+}
+
+#image1 {
+	position: relative;
+	right: 150px;
+	bottom: 100px;
+}
+
+#image2 {
+	position: relative;
+	right: 70px;
+	bottom: 50px;
+}
+
+#image3 {
+	position: relative;
+	right: 280px;
+	bottom: 135px;
+}
+
+#image4 {
+	position: relative;
+	right: 150px;
+	bottom: 100px;
+}
+
+#image5 {
+	position: relative;
+	right: 510px;
+	bottom: 60px;
+}
+
+#image6 {
+	position: relative;
+	right: 70px;
+	bottom: 50px;
+}
+
+#image7 {
+	position: relative;
+	right: 370px;
+	bottom: 110px;
+}
+
+#button2 {
+	visibility: none;
+}
+
+#button3 {
+	visibility: none;
+}
+
+#button4 {
+	visibility: none;
+}
+
+#button5 {
+	visibility: none;
+}
+
+#button6 {
+	visibility: none;
+}
+
+
+#aside {
+	height: 55%;
+	width: 43%;
+	background-color: red;
+
+	position: fixed;
+	right: 10%;
+	bottom: 10%;
+	top: 20%;
+}
